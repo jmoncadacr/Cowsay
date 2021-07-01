@@ -1,9 +1,13 @@
-import cowsay from 'cowsay';
-import express from 'express';
 
+const express = require("express");
+var cowsay = require("cowsay")
 const app = express();
-const puerto = 8080;
-const host= 'localhost';
+
+app.listen(3000, () => {
+ console.log("El servidor está inicializado en el puerto 3000");
+});
+
+
 
 app.post('/', function (req, res) {
     res.send('POST request to the homepage');
@@ -23,4 +27,3 @@ app.post('/', function (req, res) {
     }));
   });
 
-  app.listen(puerto, host);
